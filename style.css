@@ -496,6 +496,260 @@ textarea {
   gap: 18px;
 }
 
+.showcase-grid {
+  display: grid;
+  gap: 26px;
+}
+
+.showcase-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.94fr) minmax(0, 1.06fr);
+  gap: 28px;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(85, 214, 190, 0.13), transparent 42%),
+    linear-gradient(220deg, rgba(244, 197, 109, 0.08), transparent 34%),
+    var(--surface);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  backdrop-filter: blur(18px);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.showcase-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  opacity: 0;
+  transform: translateX(-28%);
+  transition: opacity 260ms ease, transform 520ms ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(85, 214, 190, 0.45);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.42);
+}
+
+.showcase-card:hover::after {
+  opacity: 1;
+  transform: translateX(28%);
+}
+
+.project-shot {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    linear-gradient(150deg, rgba(85, 214, 190, 0.2), transparent 44%),
+    linear-gradient(330deg, rgba(120, 169, 255, 0.18), transparent 45%),
+    #07111f;
+}
+
+.project-shot::before {
+  content: attr(data-shot);
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 2;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(2, 7, 13, 0.66);
+  color: rgba(245, 248, 251, 0.82);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.project-shot img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+
+.project-shot:not(.is-empty) .screen-fallback {
+  display: none;
+}
+
+.screen-fallback {
+  position: absolute;
+  inset: 54px 28px 28px;
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
+    rgba(2, 7, 13, 0.48);
+  color: #f5f8fb;
+  text-align: left;
+}
+
+.screen-fallback::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 84px;
+  height: 84px;
+  border: 1px solid rgba(143, 240, 207, 0.38);
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(143, 240, 207, 0.36) 49%, rgba(143, 240, 207, 0.36) 51%, transparent 52%),
+    linear-gradient(transparent 48%, rgba(143, 240, 207, 0.36) 49%, rgba(143, 240, 207, 0.36) 51%, transparent 52%);
+  opacity: 0.82;
+}
+
+.screen-fallback span {
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.screen-fallback strong {
+  max-width: 280px;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1;
+}
+
+.screen-fallback small {
+  color: rgba(245, 248, 251, 0.7);
+  font-weight: 800;
+}
+
+.screen-fallback.cyber {
+  background:
+    linear-gradient(180deg, rgba(85, 214, 190, 0.13), transparent),
+    rgba(2, 13, 10, 0.58);
+}
+
+.screen-fallback.hr {
+  background:
+    linear-gradient(180deg, rgba(244, 197, 109, 0.15), transparent),
+    rgba(18, 13, 4, 0.52);
+}
+
+.showcase-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 8px 8px 0;
+}
+
+.showcase-copy h3 {
+  margin: 16px 0 12px;
+  font-size: clamp(2.15rem, 4vw, 4rem);
+  line-height: 0.98;
+}
+
+.showcase-copy p {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.project-links a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 11px;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 900;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.project-links a:hover {
+  border-color: rgba(85, 214, 190, 0.5);
+  background: var(--surface-soft);
+  transform: translateY(-1px);
+}
+
+.project-links a[aria-disabled="true"] {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.achievement-grid span {
+  min-height: 84px;
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.achievement-grid strong {
+  color: var(--text);
+  font-size: 1.18rem;
+  line-height: 1;
+}
+
+.feature-list {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(85, 214, 190, 0.55);
+}
+
 .project-card {
   min-height: 320px;
   display: flex;
@@ -638,6 +892,93 @@ textarea {
   gap: 18px;
 }
 
+.certifications-section {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+[data-theme="light"] .certifications-section {
+  background: rgba(7, 17, 31, 0.025);
+}
+
+.cert-grid,
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cert-card,
+.metric-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 24px;
+  box-shadow: none;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.cert-card::before,
+.metric-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--blue), var(--gold));
+  opacity: 0.75;
+}
+
+.cert-card:hover,
+.metric-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(85, 214, 190, 0.42);
+  background: var(--surface-solid);
+}
+
+.cert-card span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cert-card.future span {
+  color: var(--gold);
+}
+
+.cert-card h3,
+.metric-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.cert-card p,
+.metric-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.metric-grid {
+  margin-bottom: 18px;
+}
+
+.metric-card span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent-strong);
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
 .repo-card {
   min-height: 230px;
   display: flex;
@@ -769,6 +1110,20 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .showcase-card {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-copy {
+    padding: 0;
+  }
+
+  .achievement-grid,
+  .cert-grid,
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .project-grid,
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -864,8 +1219,44 @@ textarea {
 
   .project-grid,
   .skills-grid,
+  .cert-grid,
+  .metric-grid,
+  .achievement-grid,
   .about-list {
     grid-template-columns: 1fr;
+  }
+
+  .showcase-card {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .project-shot {
+    min-height: 300px;
+    border-radius: 18px;
+  }
+
+  .project-shot img {
+    min-height: 300px;
+  }
+
+  .screen-fallback {
+    inset: 50px 16px 16px;
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .screen-fallback strong {
+    font-size: clamp(1.7rem, 9vw, 2.55rem);
+  }
+
+  .project-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-links {
+    justify-content: flex-start;
   }
 
   .project-card,

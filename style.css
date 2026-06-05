@@ -605,6 +605,11 @@ textarea {
     #020b08;
 }
 
+.flagship-stage,
+.security-stage {
+  min-height: 320px;
+}
+
 .desktop-stage {
   display: grid;
   align-content: center;
@@ -647,6 +652,20 @@ textarea {
   width: min(32%, 145px);
   aspect-ratio: 9 / 19.5;
   transform: rotate(5deg);
+}
+
+.flagship-stage .phone-main,
+.security-stage .phone-main {
+  left: 11%;
+  top: 6%;
+  width: min(48%, 220px);
+}
+
+.flagship-stage .phone-secondary,
+.security-stage .phone-secondary {
+  right: 9%;
+  bottom: 17%;
+  width: min(38%, 172px);
 }
 
 .showcase-card:hover .phone-main {
@@ -967,9 +986,8 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin: auto 0 0;
+  margin: 14px 0 0;
   padding: 0;
-  padding-top: 14px;
   list-style: none;
 }
 
@@ -1436,6 +1454,19 @@ textarea {
   .phone-secondary {
     right: 6%;
     width: min(36%, 160px);
+  }
+
+  .flagship-stage .phone-main,
+  .security-stage .phone-main {
+    left: 8%;
+    width: min(56%, 238px);
+  }
+
+  .flagship-stage .phone-secondary,
+  .security-stage .phone-secondary {
+    right: 5%;
+    bottom: 16%;
+    width: min(42%, 178px);
   }
 
   .project-gallery {

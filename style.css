@@ -607,7 +607,7 @@ textarea {
 
 .flagship-stage,
 .security-stage {
-  min-height: 320px;
+  min-height: clamp(380px, 36vw, 430px);
 }
 
 .desktop-stage {
@@ -656,16 +656,16 @@ textarea {
 
 .flagship-stage .phone-main,
 .security-stage .phone-main {
-  left: 11%;
-  top: 6%;
-  width: min(48%, 220px);
+  left: 12%;
+  top: 5%;
+  width: min(36%, 184px);
 }
 
 .flagship-stage .phone-secondary,
 .security-stage .phone-secondary {
-  right: 9%;
-  bottom: 17%;
-  width: min(38%, 172px);
+  right: 12%;
+  bottom: 21%;
+  width: min(29%, 148px);
 }
 
 .showcase-card:hover .phone-main {
@@ -1458,15 +1458,16 @@ textarea {
 
   .flagship-stage .phone-main,
   .security-stage .phone-main {
-    left: 8%;
-    width: min(56%, 238px);
+    left: 11%;
+    top: 5%;
+    width: min(42%, 190px);
   }
 
   .flagship-stage .phone-secondary,
   .security-stage .phone-secondary {
-    right: 5%;
-    bottom: 16%;
-    width: min(42%, 178px);
+    right: 8%;
+    bottom: 20%;
+    width: min(32%, 150px);
   }
 
   .project-gallery {

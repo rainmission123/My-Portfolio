@@ -502,22 +502,10 @@ textarea {
   gap: 24px;
 }
 
-.project-card-link {
-  display: block;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-
-.project-card-link:focus-visible {
-  border-radius: var(--radius-lg);
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-}
-
 .showcase-card {
   position: relative;
   display: grid;
+  cursor: pointer;
   grid-template-columns: minmax(320px, 0.94fr) minmax(0, 1.06fr);
   gap: 28px;
   align-items: stretch;
@@ -1485,13 +1473,3 @@ textarea {
   }
 }
 
-.project-card-link {
-    display: block;
-    width: 100%;
-    color: inherit;
-    text-decoration: none;
-}
-
-.project-card-link:hover {
-    text-decoration: none;
-}

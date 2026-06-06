@@ -502,6 +502,19 @@ textarea {
   gap: 24px;
 }
 
+.project-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-link:focus-visible {
+  border-radius: var(--radius-lg);
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .showcase-card {
   position: relative;
   display: grid;
@@ -784,7 +797,8 @@ textarea {
   justify-content: flex-end;
 }
 
-.project-links a {
+.project-links a,
+.project-links span {
   display: inline-flex;
   min-height: 36px;
   align-items: center;
@@ -804,9 +818,9 @@ textarea {
   transform: translateY(-1px);
 }
 
-.project-links a[aria-disabled="true"] {
+.project-links a[aria-disabled="true"],
+.project-links span[aria-disabled="true"] {
   color: var(--muted);
-  cursor: not-allowed;
 }
 
 .achievement-grid {

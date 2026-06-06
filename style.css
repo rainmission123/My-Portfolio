@@ -502,6 +502,17 @@ textarea {
   gap: 24px;
 }
 
+.project-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 .showcase-card {
   position: relative;
   display: grid;
